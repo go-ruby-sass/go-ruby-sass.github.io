@@ -1,0 +1,26 @@
+baseURL = "https://go-ruby-sass.github.io/"
+title = "go-ruby-sass"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[params.phases]]
+  name = "Pure Go, zero cgo"
+  status = "ready"
+  blurb = "`sass` builds with `CGO_ENABLED=0` — it cross-compiles to every Go target with no C toolchain and links into a single static binary. No `sass` binary, no `libsass`, no Dart VM."
+
+[[params.phases]]
+  name = "Dart-Sass-compatible output"
+  status = "ready"
+  blurb = "Compiles SCSS and indented Sass to CSS matching the observable behaviour of `dart-sass`, the reference implementation, via the pure-Go engine [go-scss/scss](https://github.com/go-scss/scss)."
+
+[[params.phases]]
+  name = "Both syntaxes"
+  status = "ready"
+  blurb = "Handles **SCSS** (`.scss`, brace-and-semicolon) and **indented Sass** (`.sass`, whitespace-significant) — `syntax:` selects either, mirroring `Sass.compile_string`."
+
+[[params.phases]]
+  name = "Two gem surfaces, one engine"
+  status = "ready"
+  blurb = "Exposes both the modern **`sass-embedded`** surface (`Sass.compile_string` / `Sass.compile`) and the legacy **`sassc`** surface (`SassC::Engine#render`) — bound into `rbgo` as `require \"sass\"`."
