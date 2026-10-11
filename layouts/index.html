@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{{/* Dark Reader repaints pages that already draw their own dark theme, as this one does: ask it to stand aside. */}}
+<meta name="darkreader-lock">
 <title>{{ .Site.Title }} — a pure-Go, CGO=0 Sass/SCSS compiler for Ruby, no cgo</title>
 <meta name="description" content="go-ruby-sass — Pure-Go, CGO=0 Sass/SCSS compiler exposed as a Ruby-facing adapter (sass-embedded + sassc), Dart-Sass-compatible output.">
 <style>
