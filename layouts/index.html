@@ -42,11 +42,9 @@
   <div class="hero"><div class="wrap">
     <div>
       <h1 class="head">go-ruby-sass</h1>
-      <p class="sub">Pure-Go, CGO=0 Sass/SCSS compiler exposed as a Ruby-facing adapter — Dart-Sass-compatible CSS output, both syntaxes, no cgo.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="/docs/">{{ partial "icons/book.html" . }}Documentation</a>
-        <a class="btn btn-ghost" href="https://github.com/go-ruby-sass/sass">{{ partial "icons/github.html" . }}GitHub</a>
-      </div>
+      <p class="sub">{{ if partial "mantra-on.html" . }}Go{{ else }}Pure-Go{{ end }}, {{ if not (partial "mantra-on.html" $) }}CGO=0{{ end }} Sass/SCSS compiler exposed as a Ruby-facing adapter — Dart-Sass-compatible CSS output, both syntaxes, {{ if not (partial "mantra-on.html" $) }}no cgo{{ end }}.</p>
+      {{/* [[params.cta]] in hugo.toml: the kit renders the row */}}
+      {{ partial "cta.html" . }}
       <div class="trust">{{ if not (partial "mantra-on.html" $) }}<span class="pill">pure Go · zero cgo</span>{{ end }}<span class="pill">SCSS + indented Sass</span><span class="pill">Dart-Sass-compatible</span><span class="pill">sass-embedded + sassc</span><span class="pill">rbgo-bound</span><span class="pill">no libsass · no Dart VM</span></div>
       <div class="legacy"><div class="badges">
       <a href="/docs/"><img alt="Documentation (MkDocs Material + mike)" src="https://img.shields.io/badge/docs-mkdocs--material-DC2626"></a>
